@@ -5,12 +5,12 @@
 
 	<parent>
 		<groupId>com.github.spt-oss</groupId>
-		<artifactId>spt-gear-parent</artifactId>
-		<version>2.0.7.0-SNAPSHOT</version>
+		<artifactId>spt-commons-parent</artifactId>
+		<version>2.0.0-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 
-	<artifactId>spt-gear-app</artifactId>
+	<artifactId>spt-commons-app</artifactId>
 	<packaging>jar</packaging>
 
 	<scm>
@@ -23,12 +23,12 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.github.spt-oss</groupId>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.github.spt-oss</groupId>
-			<artifactId>spt-gear-web</artifactId>
+			<artifactId>spt-commons-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

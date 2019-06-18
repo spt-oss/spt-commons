@@ -1,5 +1,5 @@
 
-package spt.gear.app.scheduling;
+package spt.commons.app.scheduling;
 
 /**
  * Executable task
