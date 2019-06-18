@@ -35,6 +35,7 @@
 	</scm>
 
 	<properties>
+		<commons-codec.version>1.11</commons-codec.version>
 		<httpclient.version>4.5.8</httpclient.version>
 		<jsoup.version>1.12.1</jsoup.version>
 		<servlet-api.version>3.1.0</servlet-api.version>
@@ -47,6 +48,11 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons-codec.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpclient</artifactId>
