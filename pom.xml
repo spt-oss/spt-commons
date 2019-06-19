@@ -24,7 +24,7 @@
 		<module>spt-commons-data-jpa</module>
 		<module>spt-commons-java</module>
 		<module>spt-commons-json</module>
-		<module>spt-commons-rest-client</module>
+		<module>spt-commons-web-client</module>
 		<module>spt-commons-web</module>
 	</modules>
 
@@ -35,39 +35,26 @@
 	</scm>
 
 	<properties>
-		<commons-codec.version>1.11</commons-codec.version>
-		<httpclient.version>4.5.8</httpclient.version>
+		<claudb.version>1.5.1</claudb.version>
+		<flyway-plus.version>5.2.4.0</flyway-plus.version>
 		<jsoup.version>1.12.1</jsoup.version>
-		<servlet-api.version>3.1.0</servlet-api.version>
-		<slf4j.version>1.7.26</slf4j.version>
 		<spring-boot.version>2.1.5.RELEASE</spring-boot.version>
-		<spring-data.version>2.1.8.RELEASE</spring-data.version>
 		<spt-checkstyle.version>8.21.0-SNAPSHOT</spt-checkstyle.version>
 		<spt-commons.version>2.0.0-SNAPSHOT</spt-commons.version>
+		<thymeleaf-extras.version>3.0.11.0</thymeleaf-extras.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>commons-codec</groupId>
-				<artifactId>commons-codec</artifactId>
-				<version>${commons-codec.version}</version>
+				<groupId>com.github.tonivade</groupId>
+				<artifactId>claudb</artifactId>
+				<version>${claudb.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.apache.httpcomponents</groupId>
-				<artifactId>httpclient</artifactId>
-				<version>${httpclient.version}</version>
-				<exclusions>
-					<exclusion>
-					<artifactId>commons-logging</artifactId>
-					<groupId>commons-logging</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>javax.servlet-api</artifactId>
-				<version>${servlet-api.version}</version>
+				<groupId>com.github.spt-oss</groupId>
+				<artifactId>flyway-core</artifactId>
+				<version>${flyway-plus.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.jsoup</groupId>
@@ -75,44 +62,11 @@
 				<version>${jsoup.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${slf4j.version}</version>
-			</dependency>
-			<dependency>
 				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-actuator</artifactId>
+				<artifactId>spring-boot-dependencies</artifactId>
 				<version>${spring-boot.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-data-jpa</artifactId>
-				<version>${spring-boot.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-json</artifactId>
-				<version>${spring-boot.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-security</artifactId>
-				<version>${spring-boot.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-test</artifactId>
-				<version>${spring-boot.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-web</artifactId>
-				<version>${spring-boot.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.data</groupId>
-				<artifactId>spring-data-commons</artifactId>
-				<version>${spring-data.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.github.spt-oss</groupId>
@@ -141,13 +95,18 @@
 			</dependency>
 			<dependency>
 				<groupId>com.github.spt-oss</groupId>
-				<artifactId>spt-commons-rest-client</artifactId>
+				<artifactId>spt-commons-web</artifactId>
 				<version>${spt-commons.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.github.spt-oss</groupId>
-				<artifactId>spt-commons-web</artifactId>
+				<artifactId>spt-commons-web-client</artifactId>
 				<version>${spt-commons.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.spt-oss</groupId>
+				<artifactId>thymeleaf-extras-minify</artifactId>
+				<version>${thymeleaf-extras.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
