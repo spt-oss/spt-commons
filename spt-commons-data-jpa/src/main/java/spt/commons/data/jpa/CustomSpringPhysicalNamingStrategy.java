@@ -28,40 +28,40 @@ public class CustomSpringPhysicalNamingStrategy extends SpringPhysicalNamingStra
 	@Override
 	public Identifier toPhysicalCatalogName(Identifier name, JdbcEnvironment jdbcEnvironment) {
 		
-		return super.toPhysicalCatalogName(this.applyAdditionally(name), jdbcEnvironment);
+		return super.toPhysicalCatalogName(this.apply(name), jdbcEnvironment);
 	}
 	
 	@Override
 	public Identifier toPhysicalSchemaName(Identifier name, JdbcEnvironment jdbcEnvironment) {
 		
-		return super.toPhysicalSchemaName(this.applyAdditionally(name), jdbcEnvironment);
+		return super.toPhysicalSchemaName(this.apply(name), jdbcEnvironment);
 	}
 	
 	@Override
 	public Identifier toPhysicalTableName(Identifier name, JdbcEnvironment jdbcEnvironment) {
 		
-		return super.toPhysicalTableName(this.applyAdditionally(name), jdbcEnvironment);
+		return super.toPhysicalTableName(this.apply(name), jdbcEnvironment);
 	}
 	
 	@Override
 	public Identifier toPhysicalSequenceName(Identifier name, JdbcEnvironment jdbcEnvironment) {
 		
-		return super.toPhysicalSequenceName(this.applyAdditionally(name), jdbcEnvironment);
+		return super.toPhysicalSequenceName(this.apply(name), jdbcEnvironment);
 	}
 	
 	@Override
 	public Identifier toPhysicalColumnName(Identifier name, JdbcEnvironment jdbcEnvironment) {
 		
-		return super.toPhysicalColumnName(this.applyAdditionally(name), jdbcEnvironment);
+		return super.toPhysicalColumnName(this.apply(name), jdbcEnvironment);
 	}
 	
 	/**
-	 * Apply additionally
+	 * Apply
 	 * 
 	 * @param name {@link Identifier}
 	 * @return {@link Identifier}
 	 */
-	protected Identifier applyAdditionally(Identifier name) {
+	protected Identifier apply(Identifier name) {
 		
 		if (name == null) {
 			
