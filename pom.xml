@@ -39,6 +39,7 @@
 		<flyway-plus.version>5.2.4.0</flyway-plus.version>
 		<jsoup.version>1.12.1</jsoup.version>
 		<spring-boot.version>2.1.5.RELEASE</spring-boot.version>
+		<spring-boot-plus.version>2.1.5.0-SNAPSHOT</spring-boot-plus.version>
 		<spt-checkstyle.version>8.21.0-SNAPSHOT</spt-checkstyle.version>
 		<spt-commons.version>2.0.0-SNAPSHOT</spt-commons.version>
 		<thymeleaf-extras.version>3.0.11.0</thymeleaf-extras.version>
@@ -60,6 +61,11 @@
 				<groupId>org.jsoup</groupId>
 				<artifactId>jsoup</artifactId>
 				<version>${jsoup.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.spt-oss</groupId>
+				<artifactId>spring-boot-autoconfigure</artifactId>
+				<version>${spring-boot-plus.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
