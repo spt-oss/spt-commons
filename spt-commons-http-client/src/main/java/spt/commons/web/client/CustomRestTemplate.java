@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package spt.commons.web.client;
 
 import org.springframework.http.converter.HttpMessageConverter;

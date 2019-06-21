@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package spt.commons.data.jpa;
 
 import org.hibernate.boot.model.naming.Identifier; // TODO @checkstyle:ignore
