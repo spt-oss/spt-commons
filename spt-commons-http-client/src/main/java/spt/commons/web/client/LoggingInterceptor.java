@@ -137,14 +137,14 @@ public class LoggingInterceptor implements ClientHttpRequestInterceptor {
 		}
 		
 		// Request Line
-		this.logger.log(String.join(" ", request.getMethod().name(), request.getURI().toString()));
+		this.logger.log(String.format("%s %s", request.getMethod().name(), request.getURI().toString()));
 		
 		// Headers
 		for (Entry<String, List<String>> entry : request.getHeaders().entrySet()) {
 			
 			for (String value : entry.getValue()) {
 				
-				this.logger.log(String.join(": ", entry.getKey(), value)); // TODO @checkstyle:ignore
+				this.logger.log(String.format("%s: %s", entry.getKey(), value)); // TODO @checkstyle:ignore
 			}
 		}
 		
@@ -182,7 +182,7 @@ public class LoggingInterceptor implements ClientHttpRequestInterceptor {
 			
 			for (String value : entry.getValue()) {
 				
-				this.logger.log(String.join(": ", entry.getKey(), value));
+				this.logger.log(String.format("%s: %s", entry.getKey(), value));
 			}
 		}
 		
@@ -239,7 +239,7 @@ public class LoggingInterceptor implements ClientHttpRequestInterceptor {
 				|| this.logger.isInfoEnabled()
 				|| this.logger.isWarnEnabled()
 				|| this.logger.isErrorEnabled();
-			/* @formatter:on */
+				/* @formatter:on */
 		}
 		
 		/**

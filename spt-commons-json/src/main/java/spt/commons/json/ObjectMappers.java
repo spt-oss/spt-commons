@@ -86,7 +86,7 @@ public class ObjectMappers {
 		}
 		catch (NullPointerException | IOException e) {
 			
-			logger.warn("Failed to deserialize as class: {}, {}", clazz, json, e);
+			logger.warn("Failed to deserialize as class '{}': {}", clazz, json, e);
 			
 			return fallback.get();
 		}
@@ -111,7 +111,7 @@ public class ObjectMappers {
 		}
 		catch (NullPointerException | IOException e) {
 			
-			logger.warn("Failed to deserialize as type: {}, {}", reference, json, e);
+			logger.warn("Failed to deserialize as type '{}': {}", reference, json, e);
 			
 			return fallback.get();
 		}

@@ -62,7 +62,7 @@ public class LoggingInterceptorCustomizer implements RestTemplateCustomizer {
 	 */
 	protected boolean isShowBody() {
 		
-		Logger showBody = LoggerFactory.getLogger(this.logger.getName() + ".showBody");
+		Logger showBody = LoggerFactory.getLogger(String.format("%s.showBody", this.logger.getName()));
 		
 		/* @formatter:off */
 		return showBody.isTraceEnabled()

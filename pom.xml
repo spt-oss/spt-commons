@@ -22,9 +22,9 @@
 		<module>spt-commons-app</module>
 		<module>spt-commons-data</module>
 		<module>spt-commons-data-jpa</module>
+		<module>spt-commons-http-client</module>
 		<module>spt-commons-java</module>
 		<module>spt-commons-json</module>
-		<module>spt-commons-web-client</module>
 		<module>spt-commons-web</module>
 	</modules>
 
@@ -36,7 +36,8 @@
 
 	<properties>
 		<claudb.version>1.5.1</claudb.version>
-		<flyway-plus.version>5.2.4.0</flyway-plus.version>
+		<flyway-plus.version>5.2.4.1-SNAPSHOT</flyway-plus.version>
+		<h2.version>1.4.197</h2.version>
 		<jsoup.version>1.12.1</jsoup.version>
 		<spring-boot.version>2.1.5.RELEASE</spring-boot.version>
 		<spring-boot-plus.version>2.1.5.0-SNAPSHOT</spring-boot-plus.version>
@@ -56,6 +57,11 @@
 				<groupId>com.github.spt-oss</groupId>
 				<artifactId>flyway-core</artifactId>
 				<version>${flyway-plus.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>${h2.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.jsoup</groupId>
@@ -91,6 +97,11 @@
 			</dependency>
 			<dependency>
 				<groupId>com.github.spt-oss</groupId>
+				<artifactId>spt-commons-http-client</artifactId>
+				<version>${spt-commons.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.spt-oss</groupId>
 				<artifactId>spt-commons-java</artifactId>
 				<version>${spt-commons.version}</version>
 			</dependency>
@@ -102,11 +113,6 @@
 			<dependency>
 				<groupId>com.github.spt-oss</groupId>
 				<artifactId>spt-commons-web</artifactId>
-				<version>${spt-commons.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.github.spt-oss</groupId>
-				<artifactId>spt-commons-web-client</artifactId>
 				<version>${spt-commons.version}</version>
 			</dependency>
 			<dependency>
