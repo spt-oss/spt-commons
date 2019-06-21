@@ -21,53 +21,57 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
- * {@link Test}: {@link Threads}
+ * {@link Test}: {@link Enums}
  */
-public class ThreadsTests {
+public class EnumsTest {
 	
 	/**
-	 * Exception thrown
-	 */
-	private boolean thrown;
-	
-	/**
-	 * {@link Threads#sleep(long)}
+	 * {@link Enums#getConstant(Class, Object)}
 	 */
 	@Test
-	public void sleep() {
+	public void getConstant() {
 		
-		Thread thread = new Thread(new Runnable() {
+		for (ExampleEnum value : ExampleEnum.values()) {
 			
-			@SuppressWarnings("synthetic-access")
-			@Override
-			public void run() {
-				
-				try {
-					
-					Threads.sleep(1000);
-					
-					fail();
-				}
-				catch (UncheckedInterruptedException e) {
-					
-					ThreadsTests.this.thrown = true;
-				}
-			}
-		});
-		
-		thread.start();
-		thread.interrupt();
+			assertThat(Enums.getConstant(ExampleEnum.class, value.getId())).isEqualTo(value);
+		}
 		
 		try {
 			
-			thread.join();
-		}
-		catch (InterruptedException e) {
+			Enums.getConstant(ExampleEnum.class, 0L);
 			
-			throw new IllegalStateException(e);
+			fail();
 		}
+		catch (IllegalStateException e) {
+			
+			/* NOP */
+		}
+	}
+	
+	/**
+	 * Example {@link Enum}
+	 */
+	@AllArgsConstructor
+	protected enum ExampleEnum implements Identifiable<Long> {
 		
-		assertThat(this.thrown).isEqualTo(true);
+		/**
+		 * A
+		 */
+		A(1L),
+		
+		/**
+		 * B
+		 */
+		B(2L);
+		
+		/**
+		 * ID
+		 */
+		@Getter
+		private final Long id;
 	}
 }

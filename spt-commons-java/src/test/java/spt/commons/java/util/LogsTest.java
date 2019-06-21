@@ -23,7 +23,7 @@ import org.junit.Test;
 /**
  * {@link Test}: {@link Logs}
  */
-public class LogsTests {
+public class LogsTest {
 	
 	/**
 	 * {@link Logs#format(String, Object...)}
