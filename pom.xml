@@ -68,13 +68,11 @@
 				<artifactId>jsoup</artifactId>
 				<version>${jsoup.version}</version>
 			</dependency>
-			<!--
 			<dependency>
 				<groupId>com.github.spt-oss</groupId>
 				<artifactId>spring-boot-autoconfigure</artifactId>
 				<version>${spring-boot-plus.version}</version>
 			</dependency>
-			-->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
